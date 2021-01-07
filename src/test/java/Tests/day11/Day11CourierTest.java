@@ -17,7 +17,7 @@
 //    @BeforeEach
 //    public void init() {
 //        w = new Warehouse();
-//        courier = new Courier(w);
+//        courier = new Courier();
 //    }
 //
 //    @Test
