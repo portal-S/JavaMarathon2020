@@ -23,9 +23,6 @@ public class Task1 {
 
         user3.sendMessage(user1, "'Был в сети 5 минут назад'");
 
-        Message message = new Message(user1, user2, "Привет");
-        System.out.println(message);
-
         MessageDatabase.showDialog(user1, user3);
     }
 }
