@@ -29,13 +29,11 @@ public class Task3 {
 
     }
 
-    public static List<MusicBand> groupsAfter2000(List<MusicBand> bands){  //если честно не совсем понял суть создания этого метода, но сделал так как понял
-        String[] groups = {"Animals as Leaders", "Axxis", "AqME", "Art Brut", "Apocalyptica", "Arditi", "Back-On", "Bag Raiders", "Beastie Boys", "Art deco"};
-
-        for(int i = 0; i < bands.size(); i++) {
-            bands.get(i).setName(groups[i]);
-            if(bands.get(i).getYear() < 2000) bands.get(i).setYear(2000 + i);
+    public static List<MusicBand> groupsAfter2000(List<MusicBand> bands){
+        List<MusicBand> bands1 = new ArrayList<>();
+        for(MusicBand musicBand : bands){
+            if(musicBand.getYear() > 2000) bands1.add(musicBand);
         }
-        return bands;
+        return bands1;
     }
 }
