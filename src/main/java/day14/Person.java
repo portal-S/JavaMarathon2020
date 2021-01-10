@@ -35,7 +35,7 @@ public class Person {
             }
             scanner.close();
         } catch (FileNotFoundException | AgeException e){
-            System.out.println("Некорректный входной файл");
+            System.out.println("Файл не найден");
             e.printStackTrace();
             return peoples;
         }

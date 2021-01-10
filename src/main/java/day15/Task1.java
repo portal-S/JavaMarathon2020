@@ -16,7 +16,7 @@ public class Task1 {
         while (scanner.hasNext()){
             String s = scanner.nextLine();
             String[] info = s.split(";");
-            if(Integer.parseInt(info[2]) == 0) printWriter.println(s);
+            if(Integer.parseInt(info[2]) == 0) printWriter.println(s.replace(";", ", "));
         }
         scanner.close();
         printWriter.close();

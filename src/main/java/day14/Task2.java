@@ -18,13 +18,20 @@ public class Task2 {
         try {
             Scanner scanner = new Scanner(file);
             while (scanner.hasNext()){
-                peoples.add(scanner.nextLine());
+                String line = scanner.nextLine();
+                if(Integer.parseInt(line.split(" ")[1]) < 0){
+                    peoples = null;
+                    throw new Exception("Некорректный входной файл");
+                }
+                peoples.add(line);
             }
             scanner.close();
         } catch (FileNotFoundException e){
-            System.out.println("Некорректный входной файл");
+            System.out.println("Файл не найден");
             e.printStackTrace();
             return peoples;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return peoples;
 
