@@ -15,13 +15,11 @@ public class MessageDatabase {
     }
 
     public static void showDialog(User u1, User u2){
-        String user1 = u1.getUserName();
-        String user2 = u2.getUserName();
         for(Message message : messages){
-            String sendName = message.getSender().getUserName();
-            String recName = message.getReceiver().getUserName();
-            if((user1.equals(sendName) || user1.equals(recName))
-                    && (user2.equals(sendName) || user2.equals(recName))){
+            User send = message.getSender();
+            User rec = message.getReceiver();
+            if((u1.equals(rec) || u1.equals(send))
+                    && (u2.equals(rec) || u2.equals(send))){
                 System.out.println(message.getSender() + ": " + message.getText());
             }
         }
