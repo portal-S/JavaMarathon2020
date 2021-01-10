@@ -42,13 +42,15 @@ public class Task2 {
     public static void printResult(File file){
         try {
             Scanner scanner = new Scanner(file);
-            int sum = 0;
+            double sum = 0;
             while (scanner.hasNext()){
                 String line = scanner.nextLine();
                 String[] s = line.split(" ");
-                for (String s1 : s) sum+=(int) Double.parseDouble(s1);
+                for (String s1 : s){
+                    sum+=Double.parseDouble(s1);
+                }
             }
-            System.out.println(sum);
+            System.out.println((int) sum);
         } catch (FileNotFoundException e){
             e.printStackTrace();
         }
