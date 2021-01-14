@@ -3,17 +3,17 @@ package day17;
 public class Task2 {
     public static void main(String[] args) {
 
-        ChessBoard chessBoard = new ChessBoard(new ChessPiece[][] {
-                {ChessPiece.ROOK_BLACK, ChessPiece.EMPTY, ChessPiece.EMPTY, ChessPiece.EMPTY, ChessPiece.EMPTY, ChessPiece.ROOK_BLACK, ChessPiece.KING_BLACK, ChessPiece.EMPTY},
-                {ChessPiece.EMPTY, ChessPiece.ROOK_BLACK, ChessPiece.EMPTY, ChessPiece.EMPTY, ChessPiece.PAWN_BLACK, ChessPiece.PAWN_BLACK, ChessPiece.EMPTY, ChessPiece.PAWN_BLACK},
-                {ChessPiece.PAWN_BLACK, ChessPiece.EMPTY, ChessPiece.KNIGHT_BLACK, ChessPiece.EMPTY, ChessPiece.EMPTY, ChessPiece.EMPTY, ChessPiece.PAWN_BLACK, ChessPiece.EMPTY},
-                {ChessPiece.QUEEN_BLACK, ChessPiece.EMPTY, ChessPiece.EMPTY, ChessPiece.BISHOP_WHITE, ChessPiece.EMPTY, ChessPiece.EMPTY, ChessPiece.EMPTY, ChessPiece.EMPTY},
-                {ChessPiece.EMPTY, ChessPiece.EMPTY, ChessPiece.EMPTY, ChessPiece.BISHOP_BLACK, ChessPiece.PAWN_WHITE, ChessPiece.EMPTY, ChessPiece.EMPTY, ChessPiece.EMPTY},
-                {ChessPiece.EMPTY, ChessPiece.EMPTY, ChessPiece.EMPTY, ChessPiece.EMPTY, ChessPiece.BISHOP_BLACK, ChessPiece.PAWN_WHITE, ChessPiece.EMPTY, ChessPiece.EMPTY},
-                {ChessPiece.PAWN_WHITE, ChessPiece.EMPTY, ChessPiece.EMPTY, ChessPiece.QUEEN_WHITE, ChessPiece.EMPTY, ChessPiece.PAWN_WHITE, ChessPiece.EMPTY, ChessPiece.PAWN_WHITE},
-                {ChessPiece.EMPTY, ChessPiece.EMPTY, ChessPiece.EMPTY, ChessPiece.EMPTY, ChessPiece.EMPTY, ChessPiece.ROOK_BLACK, ChessPiece.KING_WHITE, ChessPiece.EMPTY}
-        });
-
-        chessBoard.print();
+        ChessPiece[][] chessPiece = new ChessPiece[10][10];
+        for(int i = 0; i < chessPiece.length; i++){
+            for(int j = 0; j < chessPiece[i].length; j++){
+                chessPiece[i][j] = ChessPiece.EMPTY;
+            }
+        }
+        chessPiece[0][1] = ChessPiece.ROOK_BLACK;
+        chessPiece[0][5] = ChessPiece.ROOK_BLACK;
+        chessPiece[0][6] = ChessPiece.KING_BLACK;
+        // ну и так далее заполняем доску
+        ChessBoard chessBoard1 = new ChessBoard(chessPiece);
+        chessBoard1.print();
     }
 }
